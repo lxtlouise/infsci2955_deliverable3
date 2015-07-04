@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TestShoppingCart {
 	static WebDriver driver = new HtmlUnitDriver();
 
+	//Add one item to an empty shopping cart.
+	//After adding the item to the empty shopping cart, the user should be shown that there's one item in the shopping cart.
     @Test
     public void testAddItem(){
     	driver.get("http://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208/ref=sr_1_2?ie=UTF8&qid=1436022385&sr=8-2&keywords=java");
@@ -25,12 +27,9 @@ public class TestShoppingCart {
     	addButton.click();
     	
     	try {
-//    		WebDriverWait wait = new WebDriverWait(driver, 20);
-//    		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("confirm-text")));
-
-    		WebElement result = driver.findElement(By.id("confirm-text"));
+    		WebElement result = driver.findElement(By.id("nav-cart-count"));
     		String actual = result.getText();
-    		String expected = "1 item added to Cart";
+    		String expected = "1";
     		assertEquals(expected, actual);
 		} catch (NoSuchElementException e) {
 			fail();
