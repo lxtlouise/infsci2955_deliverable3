@@ -37,8 +37,22 @@ public class TestShoppingCart {
   
     }
     
+    //Delete the only item in the shopping cart.
+    //Since there's only item in the shopping cart, after deleting the item, the user should be shown that the shopping cart is 0.
     @Test
     public void testDeleteItem(){
+    	driver.get("https://www.amazon.com/gp/cart/view.html/ref=lh_cart_vc_btn");
+
+    	driver.findElement(By.name("submit.delete.C3UQM48TLC8H1Q")).submit();
+    	
+    	try {
+    		WebElement result = driver.findElement(By.id("nav-cart-count"));
+    		String actual = result.getText();
+    		String expected = "0";
+    		assertEquals(expected, actual);
+		} catch (NoSuchElementException e) {
+			fail();
+		}
     	
     }
 }
