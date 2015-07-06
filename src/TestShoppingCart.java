@@ -19,7 +19,6 @@ public class TestShoppingCart {
     @Test
     public void testAddItem(){  
     	driver.get("http://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208/ref=sr_1_3?ie=UTF8&qid=1436058947&sr=8-3&keywords=java");
-    	//driver.get("http://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208/ref=sr_1_2?ie=UTF8&qid=1436040888&sr=8-2&keywords=java");
     	
     	WebElement addButton = driver.findElement(By.id("add-to-cart-button"));
     	addButton.click();
