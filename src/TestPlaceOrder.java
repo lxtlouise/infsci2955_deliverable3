@@ -60,7 +60,7 @@ public class TestPlaceOrder {
 			   driver.findElement(By.name("shipToThisAddress")).click();;   //"Ship to this address"
 			   try{
 				   WebElement continurBt=driver.findElement(By.className("a-button-text"));  //find "Continue" button
-				   assertTrue(continurBt.isDisplayed() && continurBt.getAttribute("value")=="Continue");
+				   assertFalse(continurBt.isDisplayed() && continurBt.getAttribute("value")=="Continue");
 			   }catch(NoSuchElementException e){
 				   fail();
 			   }  
