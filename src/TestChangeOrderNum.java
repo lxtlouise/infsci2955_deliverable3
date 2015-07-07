@@ -28,9 +28,9 @@ public class TestChangeOrderNum {
 		}
 	
 	//Given that I've logged in, in the shopping cart page
-	//And there is two item in the shopping cart
-	//When I change one of the order number from 1 to 6
-	//Then the number in of items in the shopping cart is 6
+	//And there is one item in the shopping cart
+	//When I change the order number from 1 to 6
+	//Then the number of items in the shopping cart should be 6
 	@Test
 	public void changeToValidNum(){
 		driver.findElement(By.id("a-autoid-3-announce")).click();
@@ -41,8 +41,8 @@ public class TestChangeOrderNum {
 		}
 		
 	//Given that I've logged in, in the shopping cart page
-	//And there are two item in the shopping cart
-	//When I change one of the order number from 6 to 100
+	//And there are 6 items in the shopping cart
+	//When I change the order number from 6 to 100
 	//Then the number of items in the shopping cart should become 100
 	@Test
 	public void changeToInvalidNum(){
