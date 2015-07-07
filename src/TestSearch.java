@@ -16,9 +16,9 @@ public class TestSearch {
 	  driver.get("http://www.amazon.com");
 	}
 	
-    //Test the searching function of the website.
-    //Enter the name of an existing product in the searching bar in the home page.
-    //Since the item is existed, there should be the name of the item in the list of the returned result.
+    //Given that I'm on the page for searching items,
+    //when I search an existed item,
+    //then I see the list of results containing the item that I search.
 	@Test
 	public void testSearchExistingItems(){
 	  WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
@@ -32,9 +32,9 @@ public class TestSearch {
 	  assertEquals(expected, actual);
 	}  
 	
-	//Test the searching function of the website.
-	//Enter the name of a product which doesn't exist in the searching bar in the home page.
-	//Since the item is not existed, there should be a message returned telling the user that there's no such product.
+	//Given that I'm on the page for searching items,
+	//when I search an item which doesn't exist,
+	//then I see a message telling me that there's no matching products.
 	@Test
 	public void testSearhItemsNotExisted(){
 		WebElement search = driver.findElement(By.id("twotabsearchtextbox"));

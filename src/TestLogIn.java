@@ -9,8 +9,9 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class TestLogIn {
 	
-	//Test log in.
-	//Enter invalid username and invalid password, the user will be shown with a warning message.
+	//Given that I'm on the page for signing in,
+	//when I enter invalid email and password,
+	//then I see warning message telling me that the email or the password is invalid.
 	@Test
 	public void testLogInvalid(){
 		WebDriver driver = new HtmlUnitDriver();
@@ -38,8 +39,9 @@ public class TestLogIn {
 		
 	}
 	
-	//Test log in.
-	//Enter valid username and valid password, the user will be able to log in to the account and start to do the shopping.
+	//Given that I'm on the page for signing in,
+	//when I enter valid email and password,
+	//then I see my main page on Amazon.
 	@Test
 	public void testLogValid(){
 		WebDriver driver = new HtmlUnitDriver();

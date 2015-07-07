@@ -14,8 +14,9 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class TestShoppingCart {
 	static WebDriver driver = new HtmlUnitDriver();
 	
-	//Add one item to an empty shopping cart.
-	//After adding the item to the empty shopping cart, the user should be shown that there's one item in the shopping cart.
+	//Given that I have an empty shopping cart,
+	//when I add an item into my shopping cart, 
+	//then I see there's one item in the shopping cart. 
     @Test
     public void testAddItem(){  
     	driver.get("http://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208/ref=sr_1_3?ie=UTF8&qid=1436058947&sr=8-3&keywords=java");
@@ -34,8 +35,9 @@ public class TestShoppingCart {
   
     }
     
-    //Delete the only item in the shopping cart.
-    //Since there's only item in the shopping cart, after deleting the item, the user should be shown that the shopping cart is 0.
+    //Given that I have one item in my shopping cart,
+    //when I delete this item from my shopping cart,
+    //then I see the shopping cart is empty.
     @Test
     public void testDeleteItem(){
     	driver.get("https://www.amazon.com/gp/cart/view.html/ref=lh_cart_vc_btn");
@@ -53,8 +55,9 @@ public class TestShoppingCart {
     	
     }
     
-    //Delete items from an empty shopping cart.
-    //Since the shopping cart is empty, users should be shown that the cart is empty and they cannot delete any item from the cart.
+    //Given that I have an empty shopping cart,
+    //when I delete an item from my shopping cart,
+    //then I a message telling me that my shopping cart is empty and I should add items into it or I can't delete any item from it.
     @Test
     public void testDeleteWithEmptyCart(){
     	driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
