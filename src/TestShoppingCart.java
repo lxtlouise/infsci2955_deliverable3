@@ -24,6 +24,7 @@ public class TestShoppingCart {
     	WebElement addButton = driver.findElement(By.id("add-to-cart-button"));
     	addButton.click();
     	
+    	//add one item into the empty shopping cart, the number in the shopping cart should change from 0 to 1
     	try {
     		WebElement result = driver.findElement(By.id("nav-cart-count"));
     		String actual = result.getText();
@@ -44,6 +45,7 @@ public class TestShoppingCart {
 
     	driver.findElement(By.name("submit.delete.C3UQM48TLC8H1Q")).submit();
     	
+    	//delete the only item in the shopping cart, the number in the shopping cart should change from 1 to 0
     	try {
     		WebElement result = driver.findElement(By.id("nav-cart-count"));
     		String actual = result.getText();
@@ -62,6 +64,7 @@ public class TestShoppingCart {
     public void testDeleteWithEmptyCart(){
     	driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
     	
+    	//delete items in an empty shopping cart, users should see a reminding message
     	try {
 
     		WebElement result = driver.findElement(By.id("sc-active-cart"));
