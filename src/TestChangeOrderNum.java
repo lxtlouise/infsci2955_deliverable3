@@ -35,8 +35,6 @@ public class TestChangeOrderNum {
 	public void changeToValidNum(){
 		driver.findElement(By.id("a-autoid-3-announce")).click();
 		driver.findElement(By.id("dropdown1_5")).click();
-		//driver.findElement(By.cssSelector("#nav-link-yourAccount > span.nav-line-1")).click();
-		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(By.id("nav-cart-count")).click();
 		String num=driver.findElement(By.id("nav-cart-count")).getText();
 		assertEquals("6",num);	
