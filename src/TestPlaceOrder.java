@@ -55,7 +55,7 @@ public class TestPlaceOrder {
 	//Then I shouldn't see the button "Continue"
         @Test
         public void failPayment(){
-		 driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
+		driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
 		driver.findElement(By.name("proceedToCheckout")).click();  //"Proceed to checkout"
 		driver.findElement(By.name("shipToThisAddress")).click();;   //"Ship to this address"
 		try{
