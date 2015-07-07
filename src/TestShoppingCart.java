@@ -12,11 +12,11 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestShoppingCart {
-	static WebDriver driver = new HtmlUnitDriver();
+    static WebDriver driver = new HtmlUnitDriver();
 	
-	//Given that I have an empty shopping cart,
-	//when I add an item into my shopping cart, 
-	//then I see there's one item in the shopping cart. 
+    //Given that I have an empty shopping cart,
+    //when I add an item into my shopping cart, 
+    //then I see there's one item in the shopping cart. 
     @Test
     public void testAddItem(){  
     	driver.get("http://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208/ref=sr_1_3?ie=UTF8&qid=1436058947&sr=8-3&keywords=java");
@@ -66,10 +66,9 @@ public class TestShoppingCart {
 
     		WebElement result = driver.findElement(By.id("sc-active-cart"));
     		String actual = result.findElement(By.tagName("h1")).getText();
-    	    String expected = "Your Shopping Cart is empty.";
-    	    assertEquals(expected, actual);
-    	    assertTrue(actual.contains("empty"));
-
+    	        String expected = "Your Shopping Cart is empty.";
+    	        assertEquals(expected, actual);
+    	        assertTrue(actual.contains("empty"));
 		} catch (NoSuchElementException e) {
 			fail();
 		}
