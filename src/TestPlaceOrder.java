@@ -32,39 +32,39 @@ public class TestPlaceOrder {
 	// And the shipping address and payment method have already been set
 	// When I click "Proceed to checkout" --> "Ship to this address" --> "Continue" --> "Continue"
 	// Then I should see the button "Place your order"
-	   @Test
-	   public void successPayment(){
-			driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
-			driver.findElement(By.name("proceedToCheckout")).click();  //"Proceed to checkout"
-			WebElement div=driver.findElement(By.id("address-book-entry-0"));   //"Ship to this address"
-			div.findElement(By.cssSelector("a.a-declarative.a-button-text ")).click();
-			driver.findElement(By.className("a-button-text")).click();  //"Continue"
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		    driver.findElement(By.id("continue-top")).click();;  //"Continue"
-		    try{
-		    	String str=driver.findElement(By.name("placeYourOrder1")).getAttribute("value");
-				assertEquals(str,"Place your order");
+	@Test
+	public void successPayment(){
+		driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
+		driver.findElement(By.name("proceedToCheckout")).click();  //"Proceed to checkout"
+		WebElement div=driver.findElement(By.id("address-book-entry-0"));   //"Ship to this address"
+		div.findElement(By.cssSelector("a.a-declarative.a-button-text ")).click();
+		driver.findElement(By.className("a-button-text")).click();  //"Continue"
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.id("continue-top")).click();;  //"Continue"
+		try{
+		    String str=driver.findElement(By.name("placeYourOrder1")).getAttribute("value");
+		    assertEquals(str,"Place your order");
 		    }catch(NoSuchElementException e){
 		    	fail();
 		    }	
 	  }
 	   
-	 //Given that I am in the shopping cart page of my account, ready to pay, and there is one items in the shopping cart
-	 //And assume the shipping address and payment method haven't been set
-	 //When I click "Proceed to checkout"-->"Ship to this address"(without shipping information)
-	 //Then I shouldn't see the button "Continue"
-		   @Test
-		   public void failPayment(){
-			   driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
-			   driver.findElement(By.name("proceedToCheckout")).click();  //"Proceed to checkout"
-			   driver.findElement(By.name("shipToThisAddress")).click();;   //"Ship to this address"
-			   try{
-				   WebElement continurBt=driver.findElement(By.className("a-button-text"));  //find "Continue" button
-				   assertFalse(continurBt.isDisplayed() && continurBt.getAttribute("value")=="Continue");
-			   }catch(NoSuchElementException e){
-				   fail();
-			   }  
-		   }  
+	//Given that I am in the shopping cart page of my account, ready to pay, and there is one items in the shopping cart
+	//And assume the shipping address and payment method haven't been set
+	//When I click "Proceed to checkout"-->"Ship to this address"(without shipping information)
+	//Then I shouldn't see the button "Continue"
+        @Test
+        public void failPayment(){
+		 driver.get("https://www.amazon.com/gp/cart/view.html/ref=nav_cart");
+		driver.findElement(By.name("proceedToCheckout")).click();  //"Proceed to checkout"
+		driver.findElement(By.name("shipToThisAddress")).click();;   //"Ship to this address"
+		try{
+		    WebElement continurBt=driver.findElement(By.className("a-button-text"));  //find "Continue" button
+		    assertFalse(continurBt.isDisplayed() && continurBt.getAttribute("value")=="Continue");
+		}catch(NoSuchElementException e){
+		    fail();
+		}  
+        }  
 	
 	 
 }
