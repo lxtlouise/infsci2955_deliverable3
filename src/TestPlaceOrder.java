@@ -28,7 +28,7 @@ public class TestPlaceOrder {
 		driver.findElement(By.id("signInSubmit-input")).submit();
 	}
 	
-	// Given that I am in the shopping cart page of my account, ready to pay, and there is one items in the shopping cart
+	// Given that I am in the shopping cart page of my account, ready to pay, and there is one item in the shopping cart
 	// And the shipping address and payment method have already been set
 	// When I click "Proceed to checkout" --> "Ship to this address" --> "Continue" --> "Continue"
 	// Then I should see the button "Place your order"
@@ -49,7 +49,7 @@ public class TestPlaceOrder {
 		    }	
 	  }
 	   
-	//Given that I am in the shopping cart page of my account, ready to pay, and there is one items in the shopping cart
+	//Given that I am in the shopping cart page of my account, ready to pay, and there is one item in the shopping cart
 	//And assume the shipping address and payment method haven't been set
 	//When I click "Proceed to checkout"-->"Ship to this address"(without shipping information)
 	//Then I shouldn't see the button "Continue"
