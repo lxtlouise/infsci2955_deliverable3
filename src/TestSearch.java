@@ -9,16 +9,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class TestSearch {
-	static WebDriver driver = new HtmlUnitDriver();
+        static WebDriver driver = new HtmlUnitDriver();
 
-    @Before
-    public void setUp() throws Exception {
+        @Before
+        public void setUp() throws Exception {
 	  driver.get("http://www.amazon.com");
-	}
+        }
 	
-    //Given that I'm on the page for searching items,
-    //when I search an existed item,
-    //then I see the list of results containing the item that I search.
+        //Given that I'm on the page for searching items,
+        //when I search an existed item,
+        //then I see the list of results containing the item that I search.
 	@Test
 	public void testSearchExistingItems(){
 	  WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
